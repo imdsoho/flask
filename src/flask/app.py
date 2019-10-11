@@ -2344,6 +2344,12 @@ class Flask(_PackageBoundObject):
 
         :param environ: a WSGI environment
         """
+
+        # class RequestContext(object):
+        # def __init__(self, app, environ, request=None, session=None):
+
+        # self - app (함수 인자값)
+        # environ - environ (함수 인자값)
         return RequestContext(self, environ)
 
     def test_request_context(self, *args, **kwargs):
