@@ -100,9 +100,9 @@ def setupmethod(f):
 
 
 class Flask(_PackageBoundObject):
-    """The flask object implements a WSGI application and acts as the central
-    object.  It is passed the name of the module or package of the
-    application.  Once it is created it will act as a central registry for
+    """The flask object implements a WSGI application and acts as the central object.
+    It is passed the name of the module or package of the application.
+    Once it is created it will act as a central registry for
     the view functions, the URL rules, template configuration and much more.
 
     The name of the package is used to resolve resources from inside the
@@ -411,6 +411,9 @@ class Flask(_PackageBoundObject):
         instance_relative_config=False,
         root_path=None,
     ):
+        print("[cust_log] class Flask.__init__()")
+        print(f"import_name : {import_name}")
+
         _PackageBoundObject.__init__(
             self, import_name, template_folder=template_folder, root_path=root_path
         )
