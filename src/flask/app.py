@@ -411,8 +411,8 @@ class Flask(_PackageBoundObject):
         instance_relative_config=False,
         root_path=None,
     ):
-        print("[cust_log] class Flask.__init__()")
-        print(f"import_name : {import_name}")
+        print(f"[cust_log] class Flask.__init__()")
+        print(f"[cust_log] import_name : {import_name}")
 
         _PackageBoundObject.__init__(
             self, import_name, template_folder=template_folder, root_path=root_path
@@ -889,6 +889,8 @@ class Flask(_PackageBoundObject):
         self.jinja_env.auto_reload = self.templates_auto_reload
 
     def run(self, host=None, port=None, debug=None, load_dotenv=True, **options):
+        print(f"[cust_log] {options}")
+
         """Runs the application on a local development server.
 
         Do not use ``run()`` in a production setting. It is not intended to
@@ -972,6 +974,8 @@ class Flask(_PackageBoundObject):
         _port = 5000
         server_name = self.config.get("SERVER_NAME")
         sn_host, sn_port = None, None
+
+        print(f"[cust_log] {server_name}")
 
         if server_name:
             sn_host, _, sn_port = server_name.partition(":")
